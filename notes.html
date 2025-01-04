@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заметки - Лор и детский лор в Костроме</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <h1>Заметки</h1>
+</header>
+
+<nav>
+    <a href="index.html">Главная</a>
+    <a href="about-me.html">Обо мне</a>
+    <a href="notes.html">Заметки</a>
+</nav>
+
+<main>
+    <div class="container">
+        <h2>Ссылки на статьи</h2>
+        <ul>
+            <li><a href="blog/adenoidy-u-detey.html">Аденоиды у детей</a></li>
+            <li><a href="blog/bol-v-uhe.html">Боль в ухе</a></li>
+            <li><a href="blog/gaymorit-ili-sinusit.html">Гайморит или синусит</a></li>
+            <li><a href="blog/diagnostika-sinusita.html">Диагностика синусита</a></li>
+            <li><a href="blog/samolechenie.html">Самолечение</a></li>
+            <li><a href="blog/uchim-rebenka-smorkatsa.html">Учим ребенка сморкаться</a></li>
+        </ul>
+    </div>
+</main>
+
+<footer>
+    <p>© <span id="current-year"></span> Лор и детский лор в Костроме</p>
+</footer>
+
+<script>
+    // Получаем текущий год и вставляем его в элемент с id "current-year"
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html> 

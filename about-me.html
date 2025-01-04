@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне - Лор и детский лор в Костроме</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>Обо мне</h1>
+</header>
+
+<nav>
+    <a href="index.html">Главная</a>
+    <a href="notes.html">Заметки</a>
+    <a href="about-me.html">Обо мне</a>
+</nav>
+
+<main>
+    <div class="container">
+        <!-- Блок "Обо мне" -->
+        <div class="about-me">
+            <h2>Обо мне</h2>
+            <div class="about-me-content">
+                <img src="images/dima.webp" alt="Дмитрий Терентьев" class="about-me-image">
+                <div class="about-me-text">
+                    <p><strong>Дмитрий Терентьев</strong><br>лор и детский лор в г. Кострома</p>
+                    <p>Я врач, и за годы моей практики через мою помощь прошли уже тысячи пациентов. Но этим моя жизнь не исчерпывается, хотя работа занимает большую часть моего времени.</p>
+                    <p>Еще я люблю спорт, путешествия, туризм.</p>
+                    <p>На любительском, но серьезном уровне я занимаюсь настольным теннисом.</p>
+                    <p>Туризм и велоспорт - также способ восстановить силы, перезагрузиться для успешной работы.</p>
+                    <p>И еще у меня есть чувство юмора. На самом деле в профессии врача оно сильно не лишнее.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок с изображениями -->
+        <div class="about-me-gallery">
+            <h2>Галерея</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <a href="images/about-me-gallery/photo1.jpg" >
+                        <img src="images/about-me-gallery/photo1.jpg" alt="Фото 1" class="gallery-image">
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="images/about-me-gallery/photo2.jpg" >
+                        <img src="images/about-me-gallery/photo2.jpg" alt="Фото 2" class="gallery-image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>© <span id="current-year"></span> Лор и детский лор в Костроме</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script>
+    // Получаем текущий год и вставляем его в элемент с id "current-year"
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+<!-- Lightbox разметка -->
+<div id="lightbox" class="lightbox-hidden">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.close');
+
+    document.querySelectorAll('.lightbox').forEach(item => {
+        item.addEventListener('click', event => {
+            event.preventDefault();
+            lightboxImg.src = item.href; // Устанавливаем источник изображения
+            lightbox.style.display = 'flex'; // Показываем lightbox
+        });
+    });
+
+    // Проверяем, что closeBtn существует перед добавлением обработчика
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none'; // Скрываем lightbox
+        });
+    }
+
+    // Закрытие lightbox при клике вне изображения
+    lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+
+    // Убедитесь, что lightbox скрыт при загрузке страницы
+    window.onload = function() {
+        lightbox.style.display = 'none'; // Скрываем lightbox
+    };
+</script>
+
+</body>
+</html> 
